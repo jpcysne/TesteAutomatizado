@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +17,15 @@ namespace TesteAutomatizado.Teste
         private IWebDriver driver;
         private BizagiPage bizagi;
         private BizagiMenuPrinc bizagiInicial;
+        private TimeSpan timer = TimeSpan.FromSeconds(10);
         [SetUp]
         public void AntesDosTestes()
         {
             driver = new ChromeDriver(@"C:\Users\joaopaulo\Documents\Visual Studio 2017\Projects\TesteAutomatizado\TesteAutomatizado\bin\Debug");
             bizagi = new BizagiPage(driver);
-            IWebElement element = new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.className("modal-content")));
+
+            WebDriverWait wait = new WebDriverWait(driver, timer );
+            wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("modal-content")));
 
         }
 
