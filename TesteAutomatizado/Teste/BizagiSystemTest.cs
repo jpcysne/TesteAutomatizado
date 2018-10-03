@@ -14,13 +14,14 @@ namespace TesteAutomatizado.Teste
     class BizagiSystemTest
     {
         private IWebDriver driver;
-        private PaginaInicial bizagi;
-        
+        private BizagiPage bizagi;
+        private BizagiMenuPrinc bizagiInicial;
         [SetUp]
         public void AntesDosTestes()
         {
-            driver = new ChromeDriver(@"D:\Projetos Visual Studio\TesteAutomatizado\TesteAutomatizado\bin\Debug");
-            bizagi = new PaginaInicial(driver);
+            driver = new ChromeDriver(@"C:\Users\joaopaulo\Documents\Visual Studio 2017\Projects\TesteAutomatizado\TesteAutomatizado\bin\Debug");
+            bizagi = new BizagiPage(driver);
+            IWebElement element = new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.className("modal-content")));
 
         }
 
@@ -32,9 +33,12 @@ namespace TesteAutomatizado.Teste
         [Test]
         public void AndarProjeto()
         {
-            bizagi = new PaginaInicial(driver);
-
+            bizagi = new BizagiPage(driver);
+            bizagi.visita();
             bizagi.preenche();
+
+            bizagiInicial = new BizagiMenuPrinc(driver);
+            bizagiInicial.newCase();
         }
 
     }

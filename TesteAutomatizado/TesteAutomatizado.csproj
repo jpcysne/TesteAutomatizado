@@ -59,7 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bizagi\PaginaInicial.cs" />
+    <Compile Include="Bizagi\BizagiMenuPrinc.cs" />
+    <Compile Include="Bizagi\BizagiPage.cs" />
     <Compile Include="Page\AlteraUsuarioPage.cs" />
     <Compile Include="Page\CriadorDeCenarios.cs" />
     <Compile Include="Page\DetalhesDoLeilaoPage.cs" />
