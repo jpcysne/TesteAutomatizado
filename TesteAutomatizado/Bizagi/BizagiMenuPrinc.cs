@@ -17,17 +17,19 @@ namespace TesteAutomatizado.Bizagi
         }
 
 
-        public void newCase()
+        public RegistrarSolicitacao NewCase()
         {
             IWebElement txtbotaoCase = driver.FindElement(By.XPath("//li[@id='menuListNew']/a/span"));
             IWebElement txtList = driver.FindElement(By.XPath("//li[@id='casesList']/i"));
             IWebElement txtNome1 = driver.FindElement(By.XPath("//*[@id='categories']/ul[1]/li/span"));
-            IWebElement txtValor1 = driver.FindElement(By.XPath("//a[contains(text(),'Request assessment')]"));
+            IWebElement txtValor1 = driver.FindElement(By.XPath("//a[contains(text(),'Registrar Solicitacao')]"));
 
             txtbotaoCase.Click();
             txtList.Click();
             txtNome1.Click();
             txtValor1.Click();
+
+            return new RegistrarSolicitacao(driver);
         }
 
 

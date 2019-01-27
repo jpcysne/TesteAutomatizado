@@ -21,12 +21,11 @@ namespace TesteAutomatizado.Bizagi
             driver.Navigate().GoToUrl("http://p4notedev09/DeveloperAssessment/");
         }
 
-        public void preenche()
+        public void preencheLogin()
         {
             IWebElement txtUser = driver.FindElement(By.Id("username"));
             IWebElement txtSubmit = driver.FindElement(By.Id("btn-login"));
-            IWebElement txtNome1 = driver.FindElement(By.XPath(""));
-            IWebElement txtValor1 = driver.FindElement(By.XPath(""));
+           
 
             txtUser.SendKeys("domain\admon");
             txtUser.Submit();

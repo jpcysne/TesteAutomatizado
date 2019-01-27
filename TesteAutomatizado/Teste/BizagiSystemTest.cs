@@ -39,10 +39,10 @@ namespace TesteAutomatizado.Teste
         {
             bizagi = new BizagiPage(driver);
             bizagi.visita();
-            bizagi.preenche();
+            bizagi.preencheLogin();
 
             bizagiInicial = new BizagiMenuPrinc(driver);
-            bizagiInicial.newCase();
+            bizagiInicial.NewCase();
         }
 
     }
